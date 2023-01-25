@@ -1,0 +1,601 @@
+{
+  "declaration": { "attributes": { "version": "1.0", "encoding": "UTF-8" } },
+  "elements": [
+    {
+      "type": "element",
+      "name": "dbs",
+      "elements": [
+        {
+          "type": "element",
+          "name": "db",
+          "elements": [
+            {
+              "type": "element",
+              "name": "mt20id",
+              "elements": [{ "type": "text", "text": "PF210114" }]
+            },
+            {
+              "type": "element",
+              "name": "prfnm",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "THE KANDLE: Valentine's Special in 앙트레블"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "prfpdfrom",
+              "elements": [{ "type": "text", "text": "2023.01.20" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdto",
+              "elements": [{ "type": "text", "text": "2023.02.28" }]
+            },
+            {
+              "type": "element",
+              "name": "fcltynm",
+              "elements": [{ "type": "text", "text": "앙트레블" }]
+            },
+            {
+              "type": "element",
+              "name": "poster",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF210114_230120_123240.png"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "genrenm",
+              "elements": [{ "type": "text", "text": "클래식" }]
+            },
+            {
+              "type": "element",
+              "name": "prfstate",
+              "elements": [{ "type": "text", "text": "공연중" }]
+            },
+            {
+              "type": "element",
+              "name": "openrun",
+              "elements": [{ "type": "text", "text": "Y" }]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "db",
+          "elements": [
+            {
+              "type": "element",
+              "name": "mt20id",
+              "elements": [{ "type": "text", "text": "PF210026" }]
+            },
+            {
+              "type": "element",
+              "name": "prfnm",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "언제는 행복하지 않은 순간이 있었나요 (언행순)"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "prfpdfrom",
+              "elements": [{ "type": "text", "text": "2023.01.18" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdto",
+              "elements": [{ "type": "text", "text": "2023.02.12" }]
+            },
+            {
+              "type": "element",
+              "name": "fcltynm",
+              "elements": [
+                { "type": "text", "text": "엠스테이지(구.인사아트홀)" }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "poster",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF210026_230119_114754.gif"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "genrenm",
+              "elements": [{ "type": "text", "text": "뮤지컬" }]
+            },
+            {
+              "type": "element",
+              "name": "prfstate",
+              "elements": [{ "type": "text", "text": "공연중" }]
+            },
+            {
+              "type": "element",
+              "name": "openrun",
+              "elements": [{ "type": "text", "text": "N" }]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "db",
+          "elements": [
+            {
+              "type": "element",
+              "name": "mt20id",
+              "elements": [{ "type": "text", "text": "PF209929" }]
+            },
+            {
+              "type": "element",
+              "name": "prfnm",
+              "elements": [
+                { "type": "text", "text": "제6회 제주국제실내악페스티벌" }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "prfpdfrom",
+              "elements": [{ "type": "text", "text": "2023.01.17" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdto",
+              "elements": [{ "type": "text", "text": "2023.02.16" }]
+            },
+            {
+              "type": "element",
+              "name": "fcltynm",
+              "elements": [{ "type": "text", "text": "제주문예회관" }]
+            },
+            {
+              "type": "element",
+              "name": "poster",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF209929_230118_101154.PNG"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "genrenm",
+              "elements": [{ "type": "text", "text": "클래식" }]
+            },
+            {
+              "type": "element",
+              "name": "prfstate",
+              "elements": [{ "type": "text", "text": "공연중" }]
+            },
+            {
+              "type": "element",
+              "name": "openrun",
+              "elements": [{ "type": "text", "text": "N" }]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "db",
+          "elements": [
+            {
+              "type": "element",
+              "name": "mt20id",
+              "elements": [{ "type": "text", "text": "PF209866" }]
+            },
+            {
+              "type": "element",
+              "name": "prfnm",
+              "elements": [
+                { "type": "text", "text": "벚꽃정신병동의 즐거운 잔혹사" }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "prfpdfrom",
+              "elements": [{ "type": "text", "text": "2023.01.24" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdto",
+              "elements": [{ "type": "text", "text": "2023.01.29" }]
+            },
+            {
+              "type": "element",
+              "name": "fcltynm",
+              "elements": [{ "type": "text", "text": "산울림소극장" }]
+            },
+            {
+              "type": "element",
+              "name": "poster",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF209866_230117_110422.gif"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "genrenm",
+              "elements": [{ "type": "text", "text": "연극" }]
+            },
+            {
+              "type": "element",
+              "name": "prfstate",
+              "elements": [{ "type": "text", "text": "공연중" }]
+            },
+            {
+              "type": "element",
+              "name": "openrun",
+              "elements": [{ "type": "text", "text": "N" }]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "db",
+          "elements": [
+            {
+              "type": "element",
+              "name": "mt20id",
+              "elements": [{ "type": "text", "text": "PF209786" }]
+            },
+            {
+              "type": "element",
+              "name": "prfnm",
+              "elements": [{ "type": "text", "text": "가족 [대학로]" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdfrom",
+              "elements": [{ "type": "text", "text": "2023.01.11" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdto",
+              "elements": [{ "type": "text", "text": "2023.02.28" }]
+            },
+            {
+              "type": "element",
+              "name": "fcltynm",
+              "elements": [{ "type": "text", "text": "해오름 예술극장" }]
+            },
+            {
+              "type": "element",
+              "name": "poster",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF209786_230116_110404.gif"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "genrenm",
+              "elements": [{ "type": "text", "text": "연극" }]
+            },
+            {
+              "type": "element",
+              "name": "prfstate",
+              "elements": [{ "type": "text", "text": "공연중" }]
+            },
+            {
+              "type": "element",
+              "name": "openrun",
+              "elements": [{ "type": "text", "text": "N" }]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "db",
+          "elements": [
+            {
+              "type": "element",
+              "name": "mt20id",
+              "elements": [{ "type": "text", "text": "PF209704" }]
+            },
+            {
+              "type": "element",
+              "name": "prfnm",
+              "elements": [{ "type": "text", "text": "모노드라마 햄릿 [인천]" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdfrom",
+              "elements": [{ "type": "text", "text": "2022.12.31" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdto",
+              "elements": [{ "type": "text", "text": "2023.02.26" }]
+            },
+            {
+              "type": "element",
+              "name": "fcltynm",
+              "elements": [{ "type": "text", "text": "P&F 씨어터" }]
+            },
+            {
+              "type": "element",
+              "name": "poster",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF209704_230112_124131.gif"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "genrenm",
+              "elements": [{ "type": "text", "text": "연극" }]
+            },
+            {
+              "type": "element",
+              "name": "prfstate",
+              "elements": [{ "type": "text", "text": "공연중" }]
+            },
+            {
+              "type": "element",
+              "name": "openrun",
+              "elements": [{ "type": "text", "text": "N" }]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "db",
+          "elements": [
+            {
+              "type": "element",
+              "name": "mt20id",
+              "elements": [{ "type": "text", "text": "PF209662" }]
+            },
+            {
+              "type": "element",
+              "name": "prfnm",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "풍류음악 시리즈 1, 김유나의 해금: 제8회 김유나 독주회"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "prfpdfrom",
+              "elements": [{ "type": "text", "text": "2023.01.25" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdto",
+              "elements": [{ "type": "text", "text": "2023.01.25" }]
+            },
+            {
+              "type": "element",
+              "name": "fcltynm",
+              "elements": [{ "type": "text", "text": "국립국악원" }]
+            },
+            {
+              "type": "element",
+              "name": "poster",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF209662_230112_101527.PNG"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "genrenm",
+              "elements": [{ "type": "text", "text": "국악" }]
+            },
+            {
+              "type": "element",
+              "name": "prfstate",
+              "elements": [{ "type": "text", "text": "공연중" }]
+            },
+            {
+              "type": "element",
+              "name": "openrun",
+              "elements": [{ "type": "text", "text": "N" }]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "db",
+          "elements": [
+            {
+              "type": "element",
+              "name": "mt20id",
+              "elements": [{ "type": "text", "text": "PF209645" }]
+            },
+            {
+              "type": "element",
+              "name": "prfnm",
+              "elements": [
+                { "type": "text", "text": "나는 오늘 그 사람을 죽인다." }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "prfpdfrom",
+              "elements": [{ "type": "text", "text": "2023.01.23" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdto",
+              "elements": [{ "type": "text", "text": "2023.01.29" }]
+            },
+            {
+              "type": "element",
+              "name": "fcltynm",
+              "elements": [{ "type": "text", "text": "선돌극장" }]
+            },
+            {
+              "type": "element",
+              "name": "poster",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF209645_230111_141734.gif"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "genrenm",
+              "elements": [{ "type": "text", "text": "연극" }]
+            },
+            {
+              "type": "element",
+              "name": "prfstate",
+              "elements": [{ "type": "text", "text": "공연중" }]
+            },
+            {
+              "type": "element",
+              "name": "openrun",
+              "elements": [{ "type": "text", "text": "N" }]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "db",
+          "elements": [
+            {
+              "type": "element",
+              "name": "mt20id",
+              "elements": [{ "type": "text", "text": "PF209635" }]
+            },
+            {
+              "type": "element",
+              "name": "prfnm",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "LINK FESTA, 더 라스트맨: 혼자가 아닌 콘서트"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "prfpdfrom",
+              "elements": [{ "type": "text", "text": "2023.01.25" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdto",
+              "elements": [{ "type": "text", "text": "2023.01.25" }]
+            },
+            {
+              "type": "element",
+              "name": "fcltynm",
+              "elements": [{ "type": "text", "text": "링크아트센터" }]
+            },
+            {
+              "type": "element",
+              "name": "poster",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF209635_230111_133828.png"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "genrenm",
+              "elements": [{ "type": "text", "text": "뮤지컬" }]
+            },
+            {
+              "type": "element",
+              "name": "prfstate",
+              "elements": [{ "type": "text", "text": "공연중" }]
+            },
+            {
+              "type": "element",
+              "name": "openrun",
+              "elements": [{ "type": "text", "text": "N" }]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "db",
+          "elements": [
+            {
+              "type": "element",
+              "name": "mt20id",
+              "elements": [{ "type": "text", "text": "PF209572" }]
+            },
+            {
+              "type": "element",
+              "name": "prfnm",
+              "elements": [
+                { "type": "text", "text": "젊은 예술가의 반쪽짜리 초상" }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "prfpdfrom",
+              "elements": [{ "type": "text", "text": "2023.01.11" }]
+            },
+            {
+              "type": "element",
+              "name": "prfpdto",
+              "elements": [{ "type": "text", "text": "2023.01.29" }]
+            },
+            {
+              "type": "element",
+              "name": "fcltynm",
+              "elements": [{ "type": "text", "text": "동숭무대소극장" }]
+            },
+            {
+              "type": "element",
+              "name": "poster",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "http://www.kopis.or.kr/upload/pfmPoster/PF_PF209572_230111_094621.jpg"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "genrenm",
+              "elements": [{ "type": "text", "text": "연극" }]
+            },
+            {
+              "type": "element",
+              "name": "prfstate",
+              "elements": [{ "type": "text", "text": "공연중" }]
+            },
+            {
+              "type": "element",
+              "name": "openrun",
+              "elements": [{ "type": "text", "text": "N" }]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
