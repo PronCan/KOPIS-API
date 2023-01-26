@@ -13,8 +13,6 @@ router.get('/mu_api', (req, res) => {
             method: "GET",
         },
         (error, response, body) => {
-            // const xmltojson = converter.xml2json(body);
-            // res.send(xmltojson);
             res.send(body);
         }
     )
