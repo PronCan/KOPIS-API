@@ -7,8 +7,8 @@ const getMusical = require('./getxml')
 app.use(cors());
 
 // app.use('/', test);
-app.use('/mu_api', getMusical);
-// app.get('/mv_api', test);
+// app.use('/mu_api', getMusical);
+app.use('/', getMusical);
 
 app.get('/', (req, res) => {
     res.send('success');
