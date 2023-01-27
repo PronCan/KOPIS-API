@@ -11,6 +11,20 @@ const xml2json = require('node-xml2json');
 var apiurl = 'http://localhost:5000/mu_api';
 
 function App() {
+  // 뮤지컬 목록
+  // function getData2() {
+  //   axios.get(apiurl)
+  //     .then(res => {
+  //        var _json = xml2json.parser(res.data);
+  //        console.log('_json\n', _json);
+  //        var _html = '';
+  //        for(var i=0; i<_json.dbs.db.length; i++) {
+  //           // _html += `<img src=${_json.dbs.db[i].poster}>`;
+  //          _html += `<p>${_json.dbs.db[i].fcltynm}</p>`;
+  //        }
+  //       $('.testjson').html(_html);
+  //     })
+  // }
   function getData2() {
     axios.get(apiurl)
       .then(res => {
@@ -19,18 +33,16 @@ function App() {
          var _html = '';
          for(var i=0; i<_json.dbs.db.length; i++) {
             // _html += `<img src=${_json.dbs.db[i].poster}>`;
-           _html += `<img src=${_json.dbs.db[i].poster}>`;
+           _html += `<SwiperSlide><img className='boxofficesp' src="${_json.dbs.db[i].poster}" alt='${i}' /></SwiperSlide>`;
          }
         $('.testjson').html(_html);
       })
   }
-
-  // getData2();
   return (
     <div className="App">
-      {/* <MusicalContent /> */}
+      <MusicalContent />
       <MusicalMain />
-      <p className='testjson'></p>
+      <p className='testjson'>{getData2()}</p>
     </div>
   );
 }

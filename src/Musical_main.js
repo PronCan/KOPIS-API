@@ -1,21 +1,72 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from "swiper";
+import { EffectCoverflow, Mousewheel, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import './common.scss'
 import './musical_main.scss'
-
+import $ from 'jquery';
+import axios from 'axios';
+import logo from './img/logo2.png';
 // import "./BoxOffice.css";
 
+const xml2json = require('node-xml2json');
+
 // import required modules
-import { EffectCoverflow, Mousewheel, Autoplay } from "swiper";
 
 const Musical_main = () => {
+  // var apiurl = 'http://localhost:5000/mu_api';
+    // 공연목록 
+  const t_url = 'http://www.kopis.or.kr/openApi/restful/pblprfr'
+  + '?service=3e0f7775aa2a40238ae5d390ad13362c'
+  // + '&stdate=20230101'
+  // + '&eddate=20230228'
+  + '&cpage=1'
+  + '&rows=10'
+  + '&prfstate=02'; // 공연중
+  const apiurl = encodeURI(t_url);
+
+  // 뮤지컬 목록
+  function getData2() {
+    axios.get(apiurl)
+      .then(res => {
+         var _json = xml2json.parser(res.data);
+         console.log('_json\n', _json);
+         var _html = '';
+         _html += `<Swiper
+         effect={"coverflow"}
+         grabCursor={true}
+         centeredSlides={true}
+         slidesPerView={4}
+         coverflowEffect={{
+           rotate: 10,
+           stretch: 0,
+           depth: 120,
+           modifier: 2,
+           slideShadows: true,
+         }}
+         mousewheel={true}
+         modules={[EffectCoverflow, Pagination, Mousewheel]}
+         className="mySwiper"
+       >`;
+         for(var i=0; i<_json.dbs.db.length; i++) {
+            // _html += `<img src=${_json.dbs.db[i].poster}>`;
+           _html += `<SwiperSlide><img className='boxofficesp' src="${_json.dbs.db[i].poster}" alt='${i}' /></SwiperSlide>`;
+         }
+         _html += '</Swiper>';
+        $('.second-swiper').html(_html);
+      })
+  }
+  // getData2();
   return (
     <>
-    <div className='first-swiper'>
+    <div className='mv-logo'>
+      <img src={logo}></img>
+    </div>
+    <div className='mv-content-list'>
+      <div className='first-swiper'>
           <Swiper
             navigation={true}
             modules={[Navigation,Autoplay]}
@@ -54,64 +105,31 @@ const Musical_main = () => {
               <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86157/86157211428_727.jpg" alt='1' />
             </SwiperSlide>
           </Swiper>
-        </div>
+      </div>
+      <span className='mid-text'>Now Showing</span>
+      <div className='second-swiper'>
+      <Swiper
+         effect={"coverflow"}
+         grabCursor={true}
+         centeredSlides={true}
+         slidesPerView={4}
+         coverflowEffect={{
+           rotate: 10,
+           stretch: 0,
+           depth: 120,
+           modifier: 2,
+           slideShadows: true,
+         }}
+         mousewheel={true}
+         modules={[EffectCoverflow, Pagination, Mousewheel]}
+         className="mySwiper-mv"
+       >
 
-        <div className='boxofficetxt'>
-            뮤지컬 순위
-        </div>
+// SwiperSlide 를 map 돌리기
 
-        <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        // pagination={{ clickable: true }}
-        centeredSlides={true}
-        slidesPerView={4}
-        // spaceBetween={250}
-        coverflowEffect={{
-          rotate: 10,
-          stretch: 0,
-          depth: 120,
-          modifier: 2,
-          slideShadows: true,
-        }}
-        mousewheel={true}
-        modules={[EffectCoverflow, Pagination, Mousewheel]}
-        className="mySwiper"
-      >  
-
-          <div className='second-swiper'>
-          <SwiperSlide>
-            <img className='boxofficesp' src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86729/86729_1000.jpg" alt='1' />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='boxofficesp' src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86072/86072_1000.jpg" alt='2'/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='boxofficesp' src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86750/86750_1000.jpg" alt='3'/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='boxofficesp' src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_1000.jpg" alt='4'/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='boxofficesp' src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86157/86157_1000.jpg" alt='5'/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='boxofficesp' src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86751/86751_1000.jpg" alt='6'/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='boxofficesp' src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86728/86728_1000.jpg" alt='7'/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='boxofficesp' src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86754/86754_1000.jpg" alt='8'/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='boxofficesp' src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86745/86745_1000.jpg" alt='9'/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className='boxofficesp' src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83203/83203_1000.jpg" alt='10'/>
-          </SwiperSlide>
-          </div>
-      </Swiper>
+       </Swiper>
+      </div>
+    </div>
     </>
   )
 }

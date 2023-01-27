@@ -1,0 +1,29 @@
+.mv-logo {
+    img {
+        position: absolute;
+        left: 8rem;
+        top: 2rem;
+    }
+}
+.mv-content-list {
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    .first-swiper {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .mid-text {
+        font-size: 2rem;
+        display: flex;
+        align-items: flex-start;
+        margin: 2rem 0 2rem 10%;
+    }
+    .second-swiper {
+        height: 300px;
+        img {
+            height: 300px;
+        }
+    }
+}
