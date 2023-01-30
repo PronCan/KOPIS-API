@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import axios from 'axios';
+import $ from 'jquery';
 
-let [data, setData] = useState([]);
+// let [data, setData] = useState([]);
 
 const Musical_getapi = () => {
     // 공연목록 
@@ -14,19 +14,19 @@ const Musical_getapi = () => {
             + '&prfstate=02'; // 공연중
     const url = encodeURI(t_url);
 
-    axios.get(url)
-    .then((res)=>{
-        setData(res.data);
-    })
-    .catch((err)=> {
-        console.error(err);
-    })
-
-  return (
-    data.map((res) => {
-        // <div key={}
-    })
-  )
+    $.ajax({
+      url : url,
+      type : "GET",
+      success : function(xml){
+          console.log(xml);
+      }
+  }); 
+   
+  // return (
+  //   data.map((res) => {
+  //       // <div key={}
+  //   })
+  // )
 }
 
 export default Musical_getapi
