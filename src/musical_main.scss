@@ -5,6 +5,23 @@
         top: 2rem;
     }
 }
+.select-th-mv {
+    padding: 3rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    li {
+        padding: 1rem;
+        button {
+            height: 50px;
+            border-bottom: 2px solid #000;
+            padding: 0 2rem;
+            border-radius: 10px 10px 0 0;
+            
+        }
+    }
+}
+
 .mv-content-list {
     margin-top: 8rem;
     display: flex;
@@ -13,6 +30,25 @@
     .first-swiper {
         width: 70%;
         margin: 0 auto;
+        .mySwiper-th-rank {
+            height: 500px;
+            .mySwiper-mv-slide {
+                width: 15.3125rem;
+                height: 22rem;
+            }
+            img {
+                width: 15.3125rem;
+                height: 22rem;
+                object-fit: cover;
+            }
+        }
+    }
+    .top-text {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 0;
     }
     .mid-text {
         font-size: 2rem;
@@ -22,7 +58,9 @@
     }
     .second-swiper {
         height: 300px;
+        padding-bottom: 10%;
         .mySwiper-mv {
+            height: 500px;
             .mySwiper-mv-slide {
                 width: 15.3125rem;
                 height: 22rem;
