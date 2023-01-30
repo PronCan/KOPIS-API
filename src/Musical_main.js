@@ -67,10 +67,9 @@ console.log("_json", _data);
 
   function setContent() {
     return _data&&_data.map((content, idx) => (
-      <SwiperSlide  key={idx}>
+      <SwiperSlide key={idx} className="mySwiper-mv-slide">
         <img src={content.poster}></img>
         {/* <p>{content}</p> */}
-        <p>{idx}</p>
       </SwiperSlide>
     ))
   }
@@ -105,26 +104,26 @@ console.log("_json", _data);
       </div>
       <span className='mid-text'>Now Showing &nbsp;&nbsp;&nbsp;&nbsp;{isPending ? 'Loading.....' : null}</span>
       <div className='second-swiper'>
-      <Swiper
-         effect={"coverflow"}
-         grabCursor={true}
-         centeredSlides={true}
-         slidesPerView={4}
-         coverflowEffect={{
-           rotate: 10,
-           stretch: 0,
-           depth: 120,
-           modifier: 2,
-           slideShadows: true,
-         }}
-         mousewheel={true}
-         modules={[EffectCoverflow, Pagination, Mousewheel]}
-         className="mySwiper-mv"
-       >
-          {
-            setContent()
-          }
-       </Swiper>
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={4}
+          coverflowEffect={{
+            rotate: 10,
+            stretch: 0,
+            depth: 120,
+            modifier: 2,
+            slideShadows: true,
+          }}
+          mousewheel={true}
+          modules={[EffectCoverflow, Pagination, Mousewheel]}
+          className="mySwiper-mv"
+        >
+            {
+              setContent()
+            }
+        </Swiper>
       </div>
     </div>
     </>

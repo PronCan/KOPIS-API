@@ -22,8 +22,16 @@
     }
     .second-swiper {
         height: 300px;
+        .mySwiper-mv {
+            .mySwiper-mv-slide {
+                width: 15.3125rem;
+                height: 22rem;
+            }
+        }
         img {
-            height: 300px;
+            width: 15.3125rem;
+            height: 22rem;
+            object-fit: cover;
         }
     }
 }
