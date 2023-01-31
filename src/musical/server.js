@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const test = require('./test')
+// const test = require('./test')
 const getMusical = require('./getxml')
 
 app.use(cors());
