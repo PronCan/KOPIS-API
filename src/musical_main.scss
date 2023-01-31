@@ -63,6 +63,11 @@
             .mySwiper-mv-slide {
                 width: 15.3125rem;
                 height: 22rem;
+                .swiper-cover {
+                    position: absolute;
+                    width: 15.3125rem;
+                    height: 22rem;
+                }
             }
             img {
                 width: 15.3125rem;

@@ -5,3 +5,16 @@
     font-size: 100%;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// 영어는 font-style: oblique; 추가
+
+// -webkit-box-reflect: below 10px linear-gradient(transparent, rgba(0,0,0,0), rgba(0,0,0,0.3));
+// 박스오피스 순위 이미지에 하니까 있어보니는거 추가

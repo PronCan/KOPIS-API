@@ -13,11 +13,7 @@ import axios from 'axios';
 import logo from './img/logo2.png';
 // import "./BoxOffice.css";
 
-// Context
-
 const xml2json = require('node-xml2json');
-
-// import required modules
 
 const Musical_main = () => {
   const [isPending, startTransition] = useTransition();
@@ -87,9 +83,14 @@ console.log("_json", _data);
   function setContent() {
     return _data&&_data.map((content, idx) => (
       <SwiperSlide key={idx} className="mySwiper-mv-slide">
+        <div className='swiper-cover'>
+          <button>상세보기</button>
+          <button>예매하기</button>
+        </div>
         <img src={content.poster}></img>
         <p>{content.prfnm}</p>
         <p>{content.prfpdfrom} ~ {content.prfpdto}</p>
+        <p>{content.fcltynm}</p>
       </SwiperSlide>
     ))
   }
@@ -154,6 +155,8 @@ console.log("_json", _data);
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={3}
+          clickable={true}
+          // loop={true} 
           coverflowEffect={{
             rotate: 10,
             stretch: 0,
@@ -184,6 +187,8 @@ console.log("_json", _data);
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={3}
+          // loop={true} 
+          clickable={true}
           coverflowEffect={{
             rotate: 10,
             stretch: 0,
@@ -219,10 +224,10 @@ console.log("_json", _data);
           // className="mySwiper-mv"
           navigation={true}
             modules={[Navigation,Autoplay]}
-            // mousewheel={true}
+            // mousewheel={true}  
             loop={true} 
             autoplay={{ delay: 3000 }}
-            slidesPerView={4}
+            slidesPerView={5}
             className="mainSwiper"
         >
             {
