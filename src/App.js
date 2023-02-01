@@ -2,7 +2,7 @@ import './common.scss'
 import './App.css';
 // import React, {useEffect, useRef} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import MusicalContent from './Musical_content';
+import MusicalInfo from './Musical_info';
 import MusicalMain from './Musical_main';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/thmu' element={<MusicalMain />}></Route>
+          <Route path='/thmu_info' element={<MusicalInfo />}></Route>
           <Route path='/' element={<MusicalMain />} />
         </Routes>
       </BrowserRouter>

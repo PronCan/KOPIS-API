@@ -56,5 +56,6 @@
     "concurrently": "^7.6.0",
     "nodemon": "^2.0.20"
   },
-  "homepage": "https://proncan.github.io/KOPIS-API/"
+  "b_homepage": "https://proncan.github.io/KOPIS-API/",
+  "homepage": "./"
 }

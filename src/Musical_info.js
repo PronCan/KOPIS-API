@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useContext, useState} from 'react'
+import { AppCont } from './Musical_context'
 import './musical.scss'
 import exImg from './img/example.png';
 import logo from './img/logo2.png';
