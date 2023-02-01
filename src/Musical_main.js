@@ -17,9 +17,15 @@ const xml2json = require('node-xml2json');
 
 const Musical_main = () => {
   const [isPending, startTransition] = useTransition();
-  var apiurl = 'http://localhost:5000/mu_api';
-  var rankth_apiurl = 'http://localhost:5000/get_rank_th'
-  var rankmu_apiurl = 'http://localhost:5000/get_rank_mu'
+  //로컬용
+  // var apiurl = 'http://localhost:5000/mu_api';
+  // var rankth_apiurl = 'http://localhost:5000/get_rank_th'
+  // var rankmu_apiurl = 'http://localhost:5000/get_rank_mu'
+  // 배포용
+  const _cloudsv_url = 'https://port-0-kopis-api-1b5xkk2fldl11gxs.gksl2.cloudtype.app/'
+  var apiurl = _cloudsv_url + 'mu_api';
+  var rankth_apiurl = _cloudsv_url + 'get_rank_th';
+  var rankmu_apiurl = _cloudsv_url + 'get_rank_mu';
     // 공연목록 
   // const t_url = 'http://www.kopis.or.kr/openApi/restful/pblprfr'
   // + '?service=3e0f7775aa2a40238ae5d390ad13362c'
@@ -78,7 +84,7 @@ useEffect(()=>{
       getData();
     },[])
 
-console.log("_json", _data);
+// console.log("_json", _data);
 
   function setContent() {
     return _data&&_data.map((content, idx) => (
@@ -98,23 +104,31 @@ console.log("_json", _data);
   function setRankContent(type) {
     switch(type) {
       case 'th':
-        return _rankth&&_rankth.map((content, idx) => (
-          <SwiperSlide key={idx} className="mySwiper-mv-slide">
-            {/* <div>{JSON.stringify(content)}</div> */}
-            <img src={`http://www.kopis.or.kr${content.poster}`} />
-            <p>{content.rnum}위</p>
-            <p>{content.prfnm}</p>
-          </SwiperSlide>
-        ))
+        _rankth&&_rankth.map((content, idx) => {
+          if(idx < 20) {
+            return <SwiperSlide key={idx} className="mySwiper-th-slide">
+              {/* <div>{JSON.stringify(content)}</div> */}
+              <img src={`http://www.kopis.or.kr${content.poster}`} />
+              <p>{content.rnum}위</p>
+              <p>{content.prfnm}</p>
+            </SwiperSlide>
+          } else {
+            return <></>
+          }
+        })
       case 'mu':
-        return _rankmu&&_rankmu.map((content, idx) => (
-          <SwiperSlide key={idx} className="mySwiper-mv-slide">
-            {/* <div>{JSON.stringify(content)}</div> */}
-            <img src={`http://www.kopis.or.kr${content.poster}`} />
-            <p>{content.rnum}위</p>
-            <p>{content.prfnm}</p>
-          </SwiperSlide>
-        ))
+        return _rankmu&&_rankmu.map((content, idx) => {
+          if(idx < 20) {
+            return <SwiperSlide key={idx} className="mySwiper-mv-slide">
+              {/* <div>{JSON.stringify(content)}</div> */}
+              <img src={`http://www.kopis.or.kr${content.poster}`} />
+              <p>{content.rnum}위</p>
+              <p>{content.prfnm}</p>
+            </SwiperSlide>
+          } else {
+            return <></>
+          }
+        })
     }
   }
 
@@ -128,20 +142,20 @@ console.log("_json", _data);
         setRankContent('th');
         $('.first-swiper').removeClass('hidden')
         $('.mu-rank-swiper').addClass('hidden')
-        $('.top-text').text('주간 연극 랭킹');
+        $('.top-text').text('주간 연극 랭킹 TOP 20');
         }}>연극</button></li>
       <li><button className="mubtn" onClick={()=> {
         setRankContent('mu');
         $('.mu-rank-swiper').removeClass('hidden')
         $('.first-swiper').addClass('hidden')
-        $('.top-text').html('주간 뮤지컬 랭킹');
+        $('.top-text').html('주간 뮤지컬 랭킹 TOP 20');
         }
       }>뮤지컬</button></li>
     </ul>
     {isPending ? 'Loading.....' : null}
     <div className='mv-content-list'>
       <span className='top-text'>주간 연극 랭킹</span>
-      <div className='first-swiper'>
+      <div className='first-swiper mySwiper-th-slide'>
           {/* <Swiper
             navigation={true}
             modules={[Navigation,Autoplay]}
@@ -227,7 +241,7 @@ console.log("_json", _data);
             // mousewheel={true}  
             loop={true} 
             autoplay={{ delay: 3000 }}
-            slidesPerView={5}
+            slidesPerView={4}
             className="mainSwiper"
         >
             {

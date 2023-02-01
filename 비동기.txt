@@ -16,3 +16,6 @@ axios.get(apiurl)
     }).then(data => {
       console.log(data);
     })
+
+서버 돌리는곳
+    https://app.cloudtype.io/@twojini98/node-express:main/kopis-api#

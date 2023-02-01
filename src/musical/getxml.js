@@ -36,7 +36,7 @@ const t_url3 = 'http://www.kopis.or.kr/openApi/restful/boxoffice'
 + '?service=3e0f7775aa2a40238ae5d390ad13362c'
 + '&ststype=week'   // 주별, 월별, 일별 가능 (month/week/day)
 + '&date=' + today
-+ '&catecode=AAAA' // 장르코드 연극
++ '&cate=AAAA' // 장르코드 연극
 // + '&area=11' //서울
 const url3 = encodeURI(t_url3);
 console.log(url3);
@@ -46,7 +46,7 @@ const t_url4 = 'http://www.kopis.or.kr/openApi/restful/boxoffice'
 + '?service=3e0f7775aa2a40238ae5d390ad13362c'
 + '&ststype=week'   // 주별, 월별, 일별 가능 (month/week/day)
 + '&date=' + today
-+ '&catecode=GGGA' // 장르코드 뮤지컬
++ '&cate=GGGA' // 장르코드 뮤지컬
 // + '&area=11' //서울
 const url4 = encodeURI(t_url4);
 console.log(url4);
