@@ -100,8 +100,9 @@ useEffect(()=>{
       </SwiperSlide>
     ))
   }
-
-  function setRankContent(type) {
+  
+// 상위 20개만 출력되게 제한
+  function setRankContent(type) { 
     switch(type) {
       case 'th':
         _rankth&&_rankth.map((content, idx) => {
@@ -155,7 +156,7 @@ useEffect(()=>{
     {isPending ? 'Loading.....' : null}
     <div className='mv-content-list'>
       <span className='top-text'>주간 연극 랭킹</span>
-      <div className='first-swiper mySwiper-th-slide'>
+      <div className='first-swiper'>
           {/* <Swiper
             navigation={true}
             modules={[Navigation,Autoplay]}
