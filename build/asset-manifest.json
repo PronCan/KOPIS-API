@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/KOPIS-API/static/css/main.bf07096e.css",
+    "main.js": "/KOPIS-API/static/js/main.5b0e8d09.js",
+    "static/js/787.298349e3.chunk.js": "/KOPIS-API/static/js/787.298349e3.chunk.js",
+    "static/media/example.png": "/KOPIS-API/static/media/example.082ce34af691a075ddb8.png",
+    "index.html": "/KOPIS-API/index.html",
+    "main.bf07096e.css.map": "/KOPIS-API/static/css/main.bf07096e.css.map",
+    "main.5b0e8d09.js.map": "/KOPIS-API/static/js/main.5b0e8d09.js.map",
+    "787.298349e3.chunk.js.map": "/KOPIS-API/static/js/787.298349e3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf07096e.css",
+    "static/js/main.5b0e8d09.js"
+  ]
+}
