@@ -35,7 +35,7 @@ const Musical_main = () => {
   var [_data, setData] = useState();
   var [_rankth, setThRank] = useState();
   var [_rankmu, setMuRank] = useState();
-  const DataContext = createContext(_data);
+  // const DataContext = createContext(_data);
 
   // 뮤지컬 목록
   useEffect(()=>{
@@ -70,7 +70,7 @@ const Musical_main = () => {
   useEffect(()=>{
     function getData() {
       axios.get(rankmu_apiurl)
-        .then(res => {
+        .then(res => { 
             startTransition(async()=>{
             var _json = await xml2json.parser(res.data);
             console.log('뮤랭킹', _json);
@@ -87,7 +87,10 @@ const Musical_main = () => {
     return _data&&_data.map((content, idx) => (
       <SwiperSlide key={idx} className="mySwiper-mv-slide">
         <div className='swiper-cover'>
-          <Link to='/thmu_info' ref={{content, idx}}><button>상세보기</button></Link>
+          <Link to={'/thmu_info'} state={
+            {data: `${JSON.stringify(_data)}`,
+              index: {idx}
+            }}><button>상세보기</button></Link>
           <button>예매하기</button>
         </div>
         <img src={content.poster} alt={idx}></img>

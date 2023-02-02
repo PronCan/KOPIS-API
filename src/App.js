@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/thmu_info' element={<MusicalInfo />}></Route>
+          <Route path='/thmu_info' element={<MusicalInfo />} component={MusicalMain}></Route>
           <Route path='/' element={<MusicalMain />} />
         </Routes>
       </BrowserRouter>

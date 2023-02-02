@@ -51,6 +51,13 @@ const t_url4 = 'http://www.kopis.or.kr/openApi/restful/boxoffice'
 const url4 = encodeURI(t_url4);
 console.log(url4);
 
+// 예매상황판 - 뮤지컬
+const t_url5 = 'https://www.kopis.or.kr/openApi/restful/pblprfr/'
++ // url4에서 받아온 공연코드
++ '?service=3e0f7775aa2a40238ae5d390ad13362c'
+const url5 = encodeURI(t_url5);
+console.log(url4);
+
 router.get('/mu_api', (req, res) => {
     request(
         {
@@ -91,6 +98,20 @@ router.get('/get_rank_mu', (req, res) => {
     request(
         {
             url: url4,
+            method: "GET",
+        },
+        (error, response, body) => {
+            // console.log(JSON.stringify(body))
+            var data = JSON.stringify(body)
+            res.send(JSON.parse(data));
+        }
+    )
+})
+
+router.get('/thmv_info', (req, res) => {
+    request(
+        {
+            url: url5,
             method: "GET",
         },
         (error, response, body) => {

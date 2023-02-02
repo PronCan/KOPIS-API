@@ -2,6 +2,23 @@ ul, li {
     text-decoration: none;
     list-style: none;
 }
+
+// .box:after {
+//     content: "";
+//     display: block;
+//     left: 0;
+//     top: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.5),rgb(255, 252, 154,0.5), rgba(0,0,0,0.5),rgba(0,0,0,1));
+//     /* z-index: 11;
+//     transform: translate3d(0, 0, 0); */
+// }
+
+.txt_margin_r {
+    margin-right: 1rem;
+}
+
 .mv-main {
     width: 100%;
     height: 100vh;
