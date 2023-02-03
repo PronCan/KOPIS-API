@@ -20,28 +20,28 @@ const Musical_info = () => {
 
   const _cloudsv_url = 'https://port-0-kopis-api-1b5xkk2fldl11gxs.gksl2.cloudtype.app/'
   var apiurl = _cloudsv_url + 'thmv_info';
+  // var apiurl = 'http://localhost:5000/thmv_info';
   console.log('apiurl', apiurl)
 
   const [info, setInfo] = useState();
 
   // handler 
-  const InfoHandler = () => {
-    // const str = `https://www.kopis.or.kr/openApi/restful/pblprfr/${mt20id}?service=3e0f7775aa2a40238ae5d390ad13362c`;
-    // const _url = encodeURI(str);
-    axios.get(apiurl, {
-      params: { "id": mt20id},
-      withCredentials: true,
+  useEffect(()=>{
+    function getInfo() {
+      axios.get(apiurl, {
+        params: { "id": mt20id}
+      })
+        .then(res => {
+          console.log(res)
+          startTransition(async()=>{
+            var _json = await xml2json.parser(res.data);
+            console.log("_json", _json);
+            setInfo(_json.dbs.db);
+          });
+        })
     }
-    ).then(res => {
-      startTransition(async()=>{
-        var _json = await xml2json.parser(res.data);
-        console.log(_json);
-        setInfo(_json);
-      });
-    })
-  }
-  InfoHandler();
-
+    getInfo();
+  },[])
   // // 공연 관련 세부정보
   // const t_url = 'http://www.kopis.or.kr/openApi/restful/pblprfr/'
   //   + mt20id
@@ -63,6 +63,7 @@ const Musical_info = () => {
   // },[])
 
   console.log("info", info);
+
   // if(1)return(<>sdfsdfsdf</>)
   return (
     <div className='mv-main'>
@@ -73,17 +74,18 @@ const Musical_info = () => {
         <div className='mv-wrap'>
           <div className='mv-wrap-top'>
             <span className='mv-wrap-img'>
-              <img src={_data.poster} alt='뮤지컬포스터'></img>
+              {/* <img src={_data.poster} alt='뮤지컬포스터'></img> */}
+              <img src={logo} alt='뮤지컬포스터'></img>
             </span>
             <div className='mv-context'>
-                <h1>{_data.prfnm}</h1>
-                <h2></h2>
-                <p>감독 김아무개</p>
-                <p>나,너,우리쟤</p>
-                <p>클래식</p>
-                <p>공연시간</p>
-                <p>장소</p>
-                <p>PF210026PF210026PF210026PF210026PF210026PF210026PF210026 </p>
+                <h1>{info.prfnm}</h1>
+                <h2>{info.prfage}, 러닝타임 {info.prfruntime}</h2>
+                <p>감독 {info.prfcrew}</p>
+                <p>출연진 {info.prfcast}</p>
+                <p>{info.genrenm}</p>
+                <p>장소 {info.fcltynm}</p>
+                <p>{info.prfpdfrom} ~ {info.prfpdto}</p>
+                <p>{info.dtguidance}</p>
                 <button>예매하기</button>
             </div>
           </div>

@@ -110,7 +110,7 @@ router.get('/thmv_info', (req, res) => {
     let {id} = req.query;
     console.log(id)
     // 공연 관련 세부정보
-    const t_url5 = 'https://www.kopis.or.kr/openApi/restful/pblprfr/'
+    const t_url5 = 'http://www.kopis.or.kr/openApi/restful/pblprfr/'
     // + url4에서 받아온 공연코드 mt20id
     + id
     + '?service=3e0f7775aa2a40238ae5d390ad13362c'
