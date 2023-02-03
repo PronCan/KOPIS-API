@@ -59,8 +59,8 @@ const Musical_info = () => {
   // },[])
 
   console.log("info", info);
-
-  while(info === undefined) {isPending ? 'Loading.....' : null}
+// 이부분 지연 걸어주면 해결될 것 같은데.......
+if(1) return (<>aaaaaa</>)
   return (
     <div className='mv-main'>
       <div className='mv-logo'>
