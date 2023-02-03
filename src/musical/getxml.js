@@ -107,8 +107,8 @@ router.get('/get_rank_mu', (req, res) => {
 })
 
 router.get('/thmu_info', (req, res) => {
-    let {id} = req.query;
     // let {id} = req.params.id;
+    let {id} = req.query;
     console.log(id)
     // 공연 관련 세부정보
     const t_url5 = 'http://www.kopis.or.kr/openApi/restful/pblprfr/'
