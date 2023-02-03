@@ -107,7 +107,7 @@ router.get('/get_rank_mu', (req, res) => {
 })
 
 router.get('/thmu_info', (req, res) => {
-    // let {id} = req.query;
+    let {id} = req.query;
     // let {id} = req.params.id;
     console.log(id)
     // 공연 관련 세부정보
