@@ -106,12 +106,14 @@ router.get('/get_rank_mu', (req, res) => {
     )
 })
 
-router.get('/thmu_info', (req, res) => {
+router.get('/thmu_info/:id', (req, res) => {
     // let {id} = req.query;
-    let {id} = req.params.id;
+    // let {id} = req.params.id;
+    console.log(id)
     // 공연 관련 세부정보
     const t_url5 = 'http://www.kopis.or.kr/openApi/restful/pblprfr/'
     // + url4에서 받아온 공연코드 mt20id
+    // + 'PF200830' // 물랑
     + id
     + '?service=3e0f7775aa2a40238ae5d390ad13362c'
     const url5 = encodeURI(t_url5);

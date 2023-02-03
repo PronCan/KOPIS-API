@@ -9,11 +9,12 @@ const Musical_info = () => {
   const [isPending, startTransition] = useTransition();
 
   const location = useLocation();
+  console.log('location', location)
   const mt20id = location.state.index;// 공연 조회용 id
   const idx = location.state.id;
   const _data = location.state.data;
 
-  const _cloudsv_url = 'http://port-0-kopis-api-1b5xkk2fldl11gxs.gksl2.cloudtype.app/'
+  const _cloudsv_url = 'https://port-0-kopis-api-1b5xkk2fldl11gxs.gksl2.cloudtype.app/'
   var apiurl = _cloudsv_url + 'thmu_info';
   // var apiurl = 'http://localhost:5000/thmu_info';
   console.log('apiurl', apiurl)
@@ -24,14 +25,14 @@ const Musical_info = () => {
   useEffect(()=>{
     function getInfo() {
       axios.get(apiurl, {
-        params: { "id": mt20id }
+        params: { id: mt20id }
       })
         .then(res => {
           startTransition(async()=>{
             console.log('res', res)
-            var _json = await xml2json.parser(res);
+            var _json = await xml2json.parser(res.data);
             console.log("_json", _json);
-            setInfo(_json);
+            setInfo(_json.dbs.db);
           });
         })
     }
@@ -69,7 +70,7 @@ const Musical_info = () => {
         <div className='mv-wrap'>
           <div className='mv-wrap-top'>
             <span className='mv-wrap-img'>
-              <img src={_data.poster} alt='뮤지컬포스터'></img>
+              <img src={info.poster} alt='뮤지컬포스터'></img>
             </span>
             <div className='mv-context'>
                 <h1>{info.prfnm}</h1>
