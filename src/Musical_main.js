@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from "swiper";
 import { EffectCoverflow, Mousewheel, Autoplay } from "swiper";
-import { createContext, useEffect, useState, useTransition, useContext } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 import { Link } from 'react-router-dom'
 import "swiper/css";
 import "swiper/css/effect-coverflow";

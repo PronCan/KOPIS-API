@@ -10,20 +10,13 @@ const Musical_info = () => {
 
   const location = useLocation();
   const mt20id = location.state.index;// 공연 조회용 id
-  console.log(mt20id)
-  // 임시 서브 값 불러오기
-  const data = location.state.data;
-  const data_parse = JSON.parse(data);
-  const index = location.state.find_str;
-  const _data = data_parse[index];
-  //여기까지
+  const idx = location.state.id;
+  const _data = location.state.data;
 
   const _cloudsv_url = 'https://port-0-kopis-api-1b5xkk2fldl11gxs.gksl2.cloudtype.app/'
   var apiurl = _cloudsv_url + 'thmu_info';
   // var apiurl = 'http://localhost:5000/thmu_info';
   console.log('apiurl', apiurl)
-  console.log('_data', _data)
-
 
   const [info, setInfo] = useState();
 
@@ -34,11 +27,11 @@ const Musical_info = () => {
         params: { "id": mt20id }
       })
         .then(res => {
-          console.log(res)
           startTransition(async()=>{
-            var _json = await xml2json.parser(res.data);
+            console.log('res', res)
+            var _json = await xml2json.parser(res);
             console.log("_json", _json);
-            setInfo(_json.dbs.db);
+            setInfo(_json);
           });
         })
     }
@@ -76,8 +69,7 @@ const Musical_info = () => {
         <div className='mv-wrap'>
           <div className='mv-wrap-top'>
             <span className='mv-wrap-img'>
-              {/* <img src={_data.poster} alt='뮤지컬포스터'></img> */}
-              <img src={logo} alt='뮤지컬포스터'></img>
+              <img src={_data.poster} alt='뮤지컬포스터'></img>
             </span>
             <div className='mv-context'>
                 <h1>{info.prfnm}</h1>
