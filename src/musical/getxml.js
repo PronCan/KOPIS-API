@@ -115,7 +115,7 @@ router.get('/thmv_info', (req, res) => {
     + id
     + '?service=3e0f7775aa2a40238ae5d390ad13362c'
     const url5 = encodeURI(t_url5);
-    // console.log(t_url5);
+    console.log(t_url5);
 
     request(
         {

@@ -22,6 +22,8 @@ const Musical_info = () => {
   var apiurl = _cloudsv_url + 'thmv_info';
   // var apiurl = 'http://localhost:5000/thmv_info';
   console.log('apiurl', apiurl)
+  console.log('_data', _data)
+
 
   const [info, setInfo] = useState();
 
@@ -29,7 +31,7 @@ const Musical_info = () => {
   useEffect(()=>{
     function getInfo() {
       axios.get(apiurl, {
-        params: { "id": mt20id}
+        params: { "id": mt20id }
       })
         .then(res => {
           console.log(res)
