@@ -60,13 +60,12 @@ const Musical_info = () => {
 
   console.log("info", info);
 
-  // if(1)return(<>sdfsdfsdf</>)
+  while(info === undefined) {isPending ? 'Loading.....' : null}
   return (
     <div className='mv-main'>
       <div className='mv-logo'>
         <img src={logo}></img>
       </div>
-        {isPending ? 'Loading.....' : null}
         <div className='mv-wrap'>
           <div className='mv-wrap-top'>
             <span className='mv-wrap-img'>
