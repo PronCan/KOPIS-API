@@ -19,8 +19,8 @@ const Musical_info = () => {
   //여기까지
 
   const _cloudsv_url = 'https://port-0-kopis-api-1b5xkk2fldl11gxs.gksl2.cloudtype.app/'
-  var apiurl = _cloudsv_url + 'thmv_info';
-  // var apiurl = 'http://localhost:5000/thmv_info';
+  var apiurl = _cloudsv_url + 'thmu_info';
+  // var apiurl = 'http://localhost:5000/thmu_info';
   console.log('apiurl', apiurl)
   console.log('_data', _data)
 
