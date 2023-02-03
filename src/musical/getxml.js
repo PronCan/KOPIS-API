@@ -88,8 +88,6 @@ const t_url4 = 'http://www.kopis.or.kr/openApi/restful/boxoffice'
 const url4 = encodeURI(t_url4);
 console.log(url4);
 
-var mt20id = [];
-
 router.get('/get_rank_mu', (req, res) => {
     request(
         {

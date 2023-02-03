@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect, useTransition} from 'react'
+import React, {useContext, useState, useEffect, useTransition, createContext} from 'react'
 import axios from 'axios';
 import './musical.scss'
 import { useLocation } from 'react-router-dom';
@@ -9,42 +9,67 @@ const Musical_info = () => {
   const [isPending, startTransition] = useTransition();
 
   const location = useLocation();
+  const mt20id = location.state.index;// 공연 조회용 id
+  console.log(mt20id)
+  // 임시 서브 값 불러오기
   const data = location.state.data;
   const data_parse = JSON.parse(data);
-  const index = location.state.index.idx;
+  const index = location.state.find_str;
   const _data = data_parse[index];
-  console.log('_data', _data);
-  const mt20id = _data.mt20id; // 공연 조회용 id
+  //여기까지
 
-  // 공연 관련 세부정보
-  const t_url = 'http://www.kopis.or.kr/openApi/restful/pblprfr/'
-    + mt20id
-    + '?service=3e0f7775aa2a40238ae5d390ad13362c';
-  const thmu_info_url = encodeURI(t_url);
-  console.log(thmu_info_url);
+  const _cloudsv_url = 'https://port-0-kopis-api-1b5xkk2fldl11gxs.gksl2.cloudtype.app/'
+  var apiurl = _cloudsv_url + 'thmv_info';
+  console.log('apiurl', apiurl)
 
   const [info, setInfo] = useState();
 
-  useEffect(()=>{
-    function getData() {
-      axios.get(thmu_info_url)
-        .then(res => {
-          startTransition(async()=>{
-            var _json = await xml2json.parser(res.data);
-            setInfo(_json);
-          });
-        })
+  // handler 
+  const InfoHandler = () => {
+    // const str = `https://www.kopis.or.kr/openApi/restful/pblprfr/${mt20id}?service=3e0f7775aa2a40238ae5d390ad13362c`;
+    // const _url = encodeURI(str);
+    axios.get(apiurl, {
+      params: { "id": mt20id},
+      withCredentials: true,
     }
-    getData();
-  },[])
+    ).then(res => {
+      startTransition(async()=>{
+        var _json = await xml2json.parser(res.data);
+        console.log(_json);
+        setInfo(_json);
+      });
+    })
+  }
+  InfoHandler();
+
+  // // 공연 관련 세부정보
+  // const t_url = 'http://www.kopis.or.kr/openApi/restful/pblprfr/'
+  //   + mt20id
+  //   + '?service=3e0f7775aa2a40238ae5d390ad13362c';
+  // const thmu_info_url = encodeURI(t_url);
+  // console.log(thmu_info_url);
+
+  // useEffect(()=>{
+  //   function getInfoData() {
+  //     axios.get(thmu_info_url)
+  //       .then(res => {
+  //         startTransition(async()=>{
+  //           var _json = await xml2json.parser(res.data);
+  //           setInfo(_json);
+  //         });
+  //       })
+  //   }
+  //   getInfoData();
+  // },[])
 
   console.log("info", info);
-
+  // if(1)return(<>sdfsdfsdf</>)
   return (
     <div className='mv-main'>
       <div className='mv-logo'>
         <img src={logo}></img>
       </div>
+        {isPending ? 'Loading.....' : null}
         <div className='mv-wrap'>
           <div className='mv-wrap-top'>
             <span className='mv-wrap-img'>

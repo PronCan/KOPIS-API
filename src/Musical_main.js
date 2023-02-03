@@ -88,9 +88,12 @@ const Musical_main = () => {
       <SwiperSlide key={idx} className="mySwiper-mv-slide">
         <div className='swiper-cover'>
           <Link to={'/thmu_info'} state={
-            {data: `${JSON.stringify(_data)}`,
-              index: {idx}
-            }}><button>상세보기</button></Link>
+              {
+                index : content.mt20id,
+                id: idx,
+                data: `${JSON.stringify(_data)}`
+              }
+            }><button>상세보기</button></Link>
           <button>예매하기</button>
         </div>
         <img src={content.poster} alt={idx}></img>
