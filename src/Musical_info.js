@@ -13,7 +13,7 @@ const Musical_info = () => {
   const idx = location.state.id;
   const _data = location.state.data;
 
-  const _cloudsv_url = 'https://port-0-kopis-api-1b5xkk2fldl11gxs.gksl2.cloudtype.app/'
+  const _cloudsv_url = 'http://port-0-kopis-api-1b5xkk2fldl11gxs.gksl2.cloudtype.app/'
   var apiurl = _cloudsv_url + 'thmu_info';
   // var apiurl = 'http://localhost:5000/thmu_info';
   console.log('apiurl', apiurl)
