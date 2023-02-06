@@ -60,7 +60,12 @@ const Musical_info = () => {
 
   console.log("info", info);
 // 이부분 지연 걸어주면 해결될 것 같은데.......
-if(1) return (<>aaaaaa</>)
+while(info != undefined) {
+  if(info == undefined) break;
+  <div>로딩중 . . .</div>
+  
+}
+// if(1) return (<>aaaaaa</>)
   return (
     <div className='mv-main'>
       <div className='mv-logo'>
