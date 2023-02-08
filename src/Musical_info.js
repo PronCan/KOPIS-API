@@ -59,19 +59,25 @@ const Musical_info = () => {
   // },[])
 
   console.log("info", info);
-// 이부분 지연 걸어주면 해결될 것 같은데.......
-// https://anerim.tistory.com/221#recentComments
-// while(info == undefined) {
-//   console.log('sdfsdf');
-//   if(info != undefined) break;
-//   <div>로딩중 . . .</div>
-// }
 
-// if(1) return (<>aaaaaa</>)
+function ifEmpty(obj) {
+  if(obj.constructor !== Object) {
+    return false;
+  }
+  for(let prop in obj) {
+    if(obj.hasOwnProperty(prop)) {
+      return false;
+    }
+  }
+  return true
+}
+
+if(!info) return (<>loading....</>)
+console.log('info.prfcrew : ', info.prfcrew);
   return (
     <div className='mv-main'>
       <div className='mv-logo'>
-        <img src={logo}></img>
+        <a href='./'><img src={logo}></img></a>
       </div>
         <div className='mv-wrap'>
           <div className='mv-wrap-top'>
@@ -81,8 +87,8 @@ const Musical_info = () => {
             <div className='mv-context'>
                 <h1>{info.prfnm}</h1>
                 <h2>{info.prfage}, 러닝타임 {info.prfruntime}</h2>
-                <p>감독 {info.prfcrew}</p>
-                <p>출연진 {info.prfcast}</p>
+                <p>{ifEmpty(info.prfcrew) ? "":'감독'+info.prfcrew}</p>
+                <p>{ifEmpty(info.prfcast) ? "":'출연진'+info.prfcast}</p>
                 <p>{info.genrenm}</p>
                 <p>장소 {info.fcltynm}</p>
                 <p>{info.prfpdfrom} ~ {info.prfpdto}</p>
