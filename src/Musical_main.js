@@ -14,11 +14,14 @@ import axios from 'axios';
 import logo from './img/logo2.png';
 // import "./BoxOffice.css";
 // import MusicalContent from './Musical_info';
+import Loading from './Loading'; 
 
 const xml2json = require('node-xml2json');
 
 const Musical_main = () => {
   const [isPending, startTransition] = useTransition();
+const [isLoading, setLoading] = useState(true);
+
   //로컬용
   // var apiurl = 'http://localhost:5000/mu_api';
   // var rankth_apiurl = 'http://localhost:5000/get_rank_th'
@@ -53,6 +56,7 @@ const Musical_main = () => {
 
   // 연극 랭킹
   useEffect(()=>{
+    setLoading(true);
     function getData() {
       axios.get(rankth_apiurl)
         .then(res => {
@@ -61,6 +65,7 @@ const Musical_main = () => {
             console.log('연극랭킹', _json);
             setThRank(_json.boxofs.boxof);
           });
+          setLoading(false)
         })
     }
     getData();
@@ -146,9 +151,10 @@ const Musical_main = () => {
         }
       }>뮤지컬</button></li>
     </ul>
-    {isPending ? 'Loading.....' : null}
+    {/* {isPending ? 'Loading.....' : null} */}
     <div className='mv-content-list'>
       <span className='top-text'>주간 연극 랭킹 TOP 20</span>
+      {isLoading ? <Loading/>:null}
       <div className='first-swiper'>
           {/* <Swiper
             navigation={true}
@@ -182,7 +188,9 @@ const Musical_main = () => {
             }
         </Swiper>
       </div>
+     
       <div className='mu-rank-swiper hidden'>
+      {isLoading ? <Loading/>:null}
           {/* <Swiper
             navigation={true}
             modules={[Navigation,Autoplay]}

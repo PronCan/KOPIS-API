@@ -1,13 +1,15 @@
 import React, {useContext, useState, useEffect, useTransition, createContext} from 'react'
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import './musical.scss'
-import { useLocation } from 'react-router-dom';
 import logo from './img/logo2.png';
+import Loading from './Loading';
 const xml2json = require('node-xml2json');
 
 const Musical_info = () => {
   const [isPending, startTransition] = useTransition();
-
+  const [isLoading, setLoading] = useState(true);
+  
   const location = useLocation();
   console.log('location', location)
   const mt20id = location.state.index;// 공연 조회용 id
@@ -23,6 +25,7 @@ const Musical_info = () => {
 
   // handler 
   useEffect(()=>{
+    setLoading(true);
     function getInfo() {
       axios.get(apiurl, {
         params: { id: mt20id }
@@ -34,8 +37,9 @@ const Musical_info = () => {
             console.log("_json", _json);
             setInfo(_json.dbs.db);
           });
+          setLoading(false)
         })
-    }
+      }
     getInfo();
   },[])
   // // 공연 관련 세부정보
@@ -72,8 +76,7 @@ function ifEmpty(obj) {
   return true
 }
 
-if(!info) return (<>loading....</>)
-console.log('info.prfcrew : ', info.prfcrew);
+if(!info) return (<Loading/>)
   return (
     <div className='mv-main'>
       <div className='mv-logo'>
@@ -86,7 +89,7 @@ console.log('info.prfcrew : ', info.prfcrew);
             </span>
             <div className='mv-context'>
                 <h1>{info.prfnm}</h1>
-                <h2>{info.prfage}, 러닝타임 {info.prfruntime}</h2>
+                <h2>{info.prfage}<br/>러닝타임 {info.prfruntime}</h2>
                 <p>{ifEmpty(info.prfcrew) ? "":'감독'+info.prfcrew}</p>
                 <p>{ifEmpty(info.prfcast) ? "":'출연진'+info.prfcast}</p>
                 <p>{info.genrenm}</p>
